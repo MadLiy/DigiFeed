@@ -64,14 +64,14 @@ export class UsersController {
 
   // follow / unfollow
   @Post(':id/follow')
-  @Roles(Role.USER)
+  @Roles(Role.ADMIN, Role.USER)
   async follow(@Param('id', ParseIntPipe) id: number, @Req() req) {
     const followerId = req.user.id;
     return this.usersService.followUser(followerId, id);
   }
 
   @Delete(':id/follow')
-  @Roles(Role.USER)
+  @Roles(Role.ADMIN, Role.USER)
   async unfollow(@Param('id', ParseIntPipe) id: number, @Req() req) {
     const followerId = req.user.id;
     return this.usersService.unfollowUser(followerId, id);

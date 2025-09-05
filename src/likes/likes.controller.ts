@@ -25,7 +25,7 @@ export class LikesController {
   constructor(private likesService: LikesService) {}
 
   @Post()
-  @Roles(Role.USER)
+  @Roles(Role.ADMIN,Role.USER)
   async like(@Req() req, @Body() dto: LikePostDto) {
     const userId = req.user.id;
     return this.likesService.likePost(userId, dto.postId);

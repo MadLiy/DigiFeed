@@ -48,7 +48,7 @@ export class PostsController {
   }
 
   @Get('feed')
-  @Roles(Role.USER)
+  @Roles(Role.ADMIN, Role.USER)
   @ApiResponse({ status: 201, description: 'Post créé' })
   @ApiResponse({ status: 400, description: 'Requête invalide' })
   @ApiResponse({ status: 403, description: 'Token expirée' })
