@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mon Feed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <a class="navbar-brand" href="#">Réseau Social</a>
+  <div class="ms-auto d-flex gap-2">
+    <a class="btn btn-outline-light" href="profile.html">Mon Profil</a>
+    <button class="btn btn-outline-light" onclick="logout()">Déconnexion</button>
+  </div>
+</nav>
+
+<div class="container py-4">
+  <h2 class="mb-4">Mon Feed</h2>
+
+  <!-- Form Post -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <form id="postForm">
+        <textarea class="form-control mb-2" name="content" placeholder="Exprimez-vous..." required></textarea>
+        <input type="url" class="form-control mb-2" name="imageUrl" placeholder="Lien d'une image (optionnel)">
+        <button class="btn btn-primary">Publier</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Feed -->
+  <div id="feedContainer" class="d-flex flex-column gap-3"></div>
+</div>
+
+<script src="/js/feed.js"></script>
+</body>
+</html>
